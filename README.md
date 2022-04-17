@@ -2,8 +2,8 @@
 
 This project is a base example for MVC pattern with Express and Handlebars. For dependencies installation you can use:
 
-```
-npm install
+````
+npm install 
 ```
 
 For run the project in production, you can use:
