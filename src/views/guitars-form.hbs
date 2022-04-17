@@ -1,0 +1,42 @@
+{{> navbar}}
+<div class="container mt-4">
+  <h2>
+    <b>
+    {{#if id}}
+      Actualizar: "{{label}}" ({{id}})
+    {{else}}
+      Añadir un nuevo artículo
+    {{/if}}
+    </b>
+  </h2>
+  <!--
+    Este formulario se usará tanto para edición como creación, este if nos dice que si viene un id, entonces será un update, si no, será un create.
+    Para el action, si viene un id será un post a /guitars/:id/update, si no, será un post a /guitars/create.
+  -->
+<div class="d-flex align-items-center gap-3">
+    <img
+      class="img-thumbnail"
+      src="/img/pick.png"
+      alt="Pick"
+      width="250"
+    >
+  <form action="/guitars/{{#if id}}{{id}}/update{{else}}create{{/if}}" method="POST">
+    <div class="mb-3">
+      <label for="label" class="form-label"><b>Marca:</b></label>
+      <input type="text" class="form-control" name="label" aria-describedby="labelHelp" required="true" value="{{label}}">
+    </div>
+    <div class="mb-3">
+      <label for="model" class="form-label"><b>Modelo:</b></label>
+      <input type="text" class="form-control" name="model" aria-describedby="modelHelp">{{model}}</textarea>
+    </div>
+    <div class="mb-3">
+      <label for="color" class="form-label"><b>Color:</b></label>
+      <input type="text" class="form-control" name="color" aria-describedby="colorHelp" required="true" value="{{color}}">
+    </div>
+    <div class="mb-3">
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </div>
+  </form>
+  </div>
+     {{> backhome}}
+</div>

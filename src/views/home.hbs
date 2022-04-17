@@ -1,0 +1,24 @@
+{{> navbar}}
+<div class="container mt-4">
+  <div>
+    <header>
+      <h2><b><i>Sistema de ingreso de artículos:</i></b></h2>
+    </header>
+  </div>
+</div>
+<div class="row justify-content-center">
+  <div class="col-md-6 col-sm-12">
+    <img src="/img/banner.jpg" width="700" height="300" class="row justify-content-center">
+    <h3 class="mt-5">-Últimos registros</h3>
+    {{#each guitars}}
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">{{this.label}}</h5>
+        <p class="card-text">{{this.model}}</p>
+        <p class="card-text">{{this.color}}</p>
+        <a href="/guitars/{{this.id}}" class="btn btn-primary btn-sm">Leer más</a>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
